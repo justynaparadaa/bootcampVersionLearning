@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz</title>
+</head>
+<body>
+
+<form th:action="@{/trenerzy/add-trener}" method="post" th:object="${trener}">
+    Imie: <br>
+    <input type="text" th:field="*{firstName}">
+    <br>
+    Nazwisko: <br>
+    <input type="text" th:field="*{lastName}">
+    <br>
+    E-mail: <br>
+    <input type="text" th:field="*{email}">
+    <br>
+    Number telefonu: <br>
+    <input type="text" th:field="*{phone}">
+    <br>
+    <br>
+    Kursy:
+    <input type="checkbox" th:field="*{courseList}" value="Java">Java
+    <input type="checkbox" th:field="*{courseList}" value="Python">Python
+    <input type="checkbox" th:field="*{courseList}" value="C++">C++
+    <br>
+    <br>
+    Wynagrodzenie: <br>
+    <input type="number" th:field="*{salary}">
+    <br>
+    <br>
+    <input type="hidden" th:field="*{id}">
+    <button type="submit">Zapisz</button>
+</form>
+
+<p><a href="/strona-glowna">Strona głowna</a></p>
+
+</body>
+</html>

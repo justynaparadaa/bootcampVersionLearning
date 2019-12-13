@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona główna</title>
+</head>
+<body>
+
+Strona gówna naszej aplikacje
+
+<!--<h2 th:text="'Witaj ' + ${firstN} + ' ' + ${lastN} + ' ' + 'wiek: '+ ${age}">Witaj</h2>-->
+<!--Jesteś <span th:if="${age} >= 18">pełnoletni</span>-->
+<!--<span th:if="${age} < 18">niepełnoletni</span>-->
+
+<H1>Witaj!!</H1>
+
+<p><a th:href="@{/strona-glowna}">Strona głowna</a></p>
+<p><a th:href="@{/kursy}">Lista kursów</a></p>
+<p><a th:href="@{/student/kursanci}">Lista kursantów</a></p>
+<p><a th:href="@{/trenerzy/trenerzy}">Lista trenerów</a></p>
+
+<br>
+
+<p><a th:href="@{/student/form-student}">Formularz dla studenta</a></p>
+
+<p><a th:href="@{/trenerzy/form-trener}">Formularz dla trenera</a></p>
+
+
+</body>
+</html>

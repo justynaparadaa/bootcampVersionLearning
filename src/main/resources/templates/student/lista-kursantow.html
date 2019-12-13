@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Kursantów</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<h1>Lista Studentów</h1>
+
+<a th:href="@{/student/form-student}">Dodaj kursenta</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>Imie</th>
+        <th>Nazwisko</th>
+        <th>E-mail</th>
+        <th>Number telefonu</th>
+        <th>Kurs</th>
+        <th>Tryb</th>
+        <th><a>Usuń</a> lub <a>Edytuj</a></th>
+
+    </tr>
+    </thead>
+    <!--        for (Pizza pizza: Pizza.getPizzas())-->
+    <tr th:each="uczen : ${allStudents}">
+        <td th:text="*{uczen.firstName}"></td>
+        <td th:text="${uczen.lastName}"></td>
+        <td th:text="${uczen.email}"></td>
+        <td th:text="${uczen.phone}"></td>
+        <td th:text="${uczen.course}"></td>
+        <td th:text="${uczen.mode}"></td>
+        <td><a th:href="@{/student/kursanci-po-usunieciu(id=${uczen.id})}" th:text="usuń"></a> lub
+            <a th:href="@{/student/edit(id=${uczen.id})}" th:text="edytuj"></a></td>
+
+    </tr>
+</table>
+
+
+<p><a href="/strona-glowna">Strona głowna</a></p>
+
+</body>
+</html>

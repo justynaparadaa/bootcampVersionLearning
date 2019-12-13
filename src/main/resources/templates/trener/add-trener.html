@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+Dziękujemy za zapisanie się!!
+<br>
+<br>
+
+Imię: <span th:text="${trener.firstName}"></span>
+<br>
+Nazwisko: <span th:text="${trener.lastName}"></span>
+<br>
+E-mail: <span th:text="${trener.email}"></span>
+<br>
+Number telefonu: <span th:text="${trener.phone}"></span>
+<br>
+
+Kurs:
+<ul> <li th:each="course : ${trener.getCourseList()}" th:text="${course}"></li>
+</ul>
+
+<br>
+Wynagrodzenie: <span th:text="${trener.salary}"></span>
+
+
+<p><a href="/strona-glowna">Strona głowna</a></p>
+
+
+</body>
+</html>

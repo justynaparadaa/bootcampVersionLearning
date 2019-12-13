@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+Dziękujemy za zapisanie się!!
+<br>
+<br>
+
+Imię: <span th:text="${student.firstName}"></span>
+<br>
+Nazwisko: <span th:text="${student.lastName}"></span>
+<br>
+E-mail: <span th:text="${student.email}"></span>
+<br>
+Number telefonu: <span th:text="${student.phone}"></span>
+<br>
+Kurs: <span th:text="${student.course}"></span>
+<br>
+Tryby: <span th:text="${student.mode}"></span>
+
+
+<p><a href="/strona-glowna">Strona głowna</a></p>
+
+</body>
+</html>

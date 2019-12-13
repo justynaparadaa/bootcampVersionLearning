@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Kursantów</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<h1>Lista Trenerów</h1>
+
+<a th:href="@{/trenerzy/form-trener}">Dodaj trenera</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>Imie</th>
+        <th>Nazwisko</th>
+        <th>E-mail</th>
+        <th>Number telefonu</th>
+        <th>Kursy</th>
+        <th>Wynagrodzenie</th>
+        <th><a>Usuń</a> lub <a>Edytuj</a></th>
+
+    </tr>
+    </thead>
+    <!--        for (Pizza pizza: Pizza.getPizzas())-->
+    <tr th:each="trener : ${allTreners}">
+        <td th:text="${trener.firstName}"></td>
+        <td th:text="${trener.lastName}"></td>
+        <td th:text="${trener.email}"></td>
+        <td th:text="${trener.phone}"></td>
+        <td th:text="${trener.courseList}"></td>
+        <td th:text="${trener.salary}"></td>
+        <td><a th:href="@{/trenerzy/trenerzy-po-usunieciu(id=${trener.id})}" th:text="usuń"></a> lub
+            <a th:href="@{/trenerzy/edit(id=${trener.id})}" th:text="edytuj"></a></td>
+<!--        <td><a th:href="@{/kursanci-po-usunieciu(id=${uczen.id})}" th:text="usuń"></a> lub-->
+<!--            <a th:href="@{/edit(id=${uczen.id})}" th:text="edit"></a></td>-->
+
+    </tr>
+</table>
+
+
+<p><a href="/strona-glowna">Strona głowna</a></p>
+
+</body>
+</html>
